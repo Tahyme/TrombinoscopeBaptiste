@@ -1,10 +1,42 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Créer un utilisateur</h1>
+<div class="container mb-5 mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">Créer un utilisateur</h1>
+                    
+                    {{ form_start(form) }}
+                    
+                    <div class="mb-3">
+                        {{ form_row(form.Prenom, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+                    </div>
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit">Créer</button>
-    {{ form_end(form) }}
+                    <div class="mb-3">
+                        {{ form_row(form.Nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_row(form.Telephone, {'attr': {'class': 'form-control', 'placeholder': 'Téléphone'}}) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_row(form.Poste, {'attr': {'class': 'form-control', 'placeholder': 'Poste'}}) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_row(form.Photo, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mt-4">Créer</button>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

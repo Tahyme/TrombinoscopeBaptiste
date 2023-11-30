@@ -3,7 +3,7 @@
 {% block title %}Hello IndexController!{% endblock %}
 
 {% block body %}
-<div class="fond1">
+    <div class="fond1">
         <div class="custom-container text-center">
             <div class="row">
                 <div class="col">
@@ -16,37 +16,81 @@
                     <h3 class="custom-h3">Trombinoscope</h3>
                     <h1 class="custom-h1">H3 HITEMA</h1>
                     <br>
-                    <p class="wtext">Bienvenue sur le Trombinoscope !
+                    <p class="wtext">Bienvenue sur le Trombinoscope!
                     </p>
                     <br>
-                    {#}
-                    <button type="button" class="btn btn-custom btn-lg" onclick="copyToClipboard(this)"><i
-                                class="bi bi-play-fill"></i> Jouer
-                    </button>
-                    <span class="space"></span>
-                    <span class="custom-button">play.zenavia.net</span>#}
+                    <!-- Ajoutez le bouton pour activer/désactiver le mode "Édition" -->
+                    <button id="editModeButton" class="btn btn-custom btn-lg">Activer le mode Édition</button>
                 </div>
             </div>
         </div>
     </div>
 
-<div class="fond2">
+    <div class="fond2">
         <div class="container text-center">
-        <h1>User List</h1>
+            <h1>Liste des utilisateurs</h1>
             <div class="row">
                 {% for user in users %}
-                    <div class="col-md-4 mb-4 mt-4">
+                    <div class="col-md-4 mb-4 mt-4 user-card" data-firstname="{{ user.Prenom }}" data-lastname="{{ user.Nom }}" data-position="{{ user.Poste }}" data-telephone="{{ user.Telephone }}" data-userid="{{ user.id }}">
                         <div class="card h-100">
-                            <!-- User details go here, customize as needed -->
-                            <img src="{{ asset('uploads/photos/' ~ user.photo) }}" class="card-img-top img-fluid-4 mr-4" alt="{{ user.Prenom }} {{ user.Nom }}">
+                            <img src="{{ asset('uploads/photos/' ~ user.photo) }}" class="card-img-top img-fluid" alt="{{ user.Prenom }} {{ user.Nom }}">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">{{ user.Prenom }} {{ user.Nom }}</h5>
+                            <h5 class="card-title">{{ user.Prenom }} {{ user.Nom }}</h5>
                                 <p class="card-text">{{ user.Poste }}</p>
-                            </div>
-                        </div>
-                    </div>
+
+            <!-- Bouton de suppression uniquement en mode "Édition" -->
+            <button class="delete-button btn btn-sm btn-danger ml-auto mr-3" style="display: none;">Supprimer</button>
+        </div>
+    </div>
+</div>
                 {% endfor %}
             </div>
         </div>
     </div>
+
+    <!-- Assurez-vous d'inclure SweetAlert2 dans votre projet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const userCards = document.querySelectorAll('.user-card');
+            const editModeButton = document.getElementById('editModeButton');
+
+            // Écouteur pour activer/désactiver le mode "Édition"
+            editModeButton.addEventListener('click', function () {
+                const deleteButtons = document.querySelectorAll('.delete-button');
+                deleteButtons.forEach(button => button.style.display = button.style.display === 'none' ? 'block' : 'none');
+                editModeButton.innerText = editModeButton.innerText === 'Activer le mode Édition' ? 'Désactiver le mode Édition' : 'Activer le mode Édition';
+            });
+
+        
+
+            userCards.forEach(function (card) {
+                card.addEventListener('click', function () {
+                    const firstName = card.dataset.firstname;
+                    const lastName = card.dataset.lastname;
+                    const position = card.dataset.position;
+                    const telephone = card.dataset.telephone;
+
+                    if (editModeButton.innerText === 'Activer le mode Édition') {
+                        Swal.fire({
+                            title: `${firstName} ${lastName}`,
+                            html: `<p><strong>Poste:</strong> ${position}</p><p><strong>Téléphone:</strong> ${telephone}</p>`,
+                            confirmButtonText: 'Fermer'
+                        });
+                    }
+                });
+
+                // Ajouter un écouteur pour le bouton de suppression
+                const deleteButton = card.querySelector('.delete-button');
+                deleteButton.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Empêche le clic sur le bouton d'activer la carte
+                    const userId = card.dataset.userid; // Ajoutez un attribut data-userid à chaque carte pour stocker l'ID de l'utilisateur
+                    // Appelez la route de suppression avec l'ID de l'utilisateur
+                    window.location.href = `/delete-user/${userId}`;
+                });
+            });
+        });
+    </script>
 {% endblock %}

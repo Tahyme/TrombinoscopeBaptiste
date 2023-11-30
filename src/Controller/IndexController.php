@@ -30,5 +30,15 @@ class IndexController extends AbstractController
             'users' => $users,
         ]);
     }
+
+    #[Route('/delete-user/{id}', name: 'delete_user')]
+        public function deleteUser(User $user): Response
+        {
+            $this->entityManager->remove($user);
+            $this->entityManager->flush();
+        
+            // Rediriger vers la page d'index après la suppression
+            return $this->redirectToRoute('app_index');
+        }
 }
 

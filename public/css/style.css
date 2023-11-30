@@ -345,3 +345,15 @@ body {
     filter: grayscale(0%); /* Retire le noir et blanc au survol */
     transform: scale(1.1); /* Zoom au survol */
 }
+
+.card-img-container {
+    width: 100%; /* Set the width of the container */
+    height: 0; /* Set initial height to zero */
+    padding-top: 100%; /* Maintain a 1:1 aspect ratio (height equal to width) */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.card-img-container img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+}

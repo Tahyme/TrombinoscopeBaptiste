@@ -31,18 +31,21 @@
     </div>
 
 <div class="fond2">
-        <div class="custom-container text-center">
+        <div class="container text-center">
+        <h1>User List</h1>
             <div class="row">
-                <div class="col" style="text-align: left;padding-left:8%;margin: auto;">
-                    <h3 class="custom-h3">ZENAVIA PRÉSENTE</h3>
-                    <br>
-                    <h4>Un serveur Minecraft où vous pouvez jouer à votre rythme, avec une communauté <span
-                                class="zenacolorhighlight">active et accueillante.</span> Vous pouvez la retrouver en jeu ou via <a class="a_nothing" href="https://discord.gg/zenavia">notre Discord <i class="bi bi-discord"></i>.</a></h4>
-
-                </div>
-                <div class="col">
-                    <img class="img-fluid" style="max-width: 60%;" src="{{ asset('images/imageasset.png') }}" alt="">
-                </div>
+                {% for user in users %}
+                    <div class="col-md-4 mb-4 mt-4">
+                        <div class="card h-100">
+                            <!-- User details go here, customize as needed -->
+                            <img src="{{ asset('uploads/photos/' ~ user.photo) }}" class="card-img-top img-fluid-4 mr-4" alt="{{ user.Prenom }} {{ user.Nom }}">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">{{ user.Prenom }} {{ user.Nom }}</h5>
+                                <p class="card-text">{{ user.Poste }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>

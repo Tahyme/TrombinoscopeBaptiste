@@ -6,3 +6,7 @@ controllers:
 home:
     path: /
     controller: App\Controller\IndexController::index
+
+user_create:
+    path: '/user'
+    controller: 'App\Controller\CreateUserController::index'

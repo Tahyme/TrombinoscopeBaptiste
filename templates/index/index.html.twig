@@ -3,18 +3,47 @@
 {% block title %}Hello IndexController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="fond1">
+        <div class="custom-container text-center">
+            <div class="row">
+                <div class="col">
+                    <img class="img-fluid" style="max-width: 50%;" src="{{ asset('images/avatar.png') }}" alt="">
+                </div>
+                <div class="col" style="text-align: left;">
+                    <br>
+                    <br>
+                    <br>
+                    <h3 class="custom-h3">Trombinoscope</h3>
+                    <h1 class="custom-h1">H3 HITEMA</h1>
+                    <br>
+                    <p class="wtext">Bienvenue sur le Trombinoscope !
+                    </p>
+                    <br>
+                    {#}
+                    <button type="button" class="btn btn-custom btn-lg" onclick="copyToClipboard(this)"><i
+                                class="bi bi-play-fill"></i> Jouer
+                    </button>
+                    <span class="space"></span>
+                    <span class="custom-button">play.zenavia.net</span>#}
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="fond2">
+        <div class="custom-container text-center">
+            <div class="row">
+                <div class="col" style="text-align: left;padding-left:8%;margin: auto;">
+                    <h3 class="custom-h3">ZENAVIA PRÉSENTE</h3>
+                    <br>
+                    <h4>Un serveur Minecraft où vous pouvez jouer à votre rythme, avec une communauté <span
+                                class="zenacolorhighlight">active et accueillante.</span> Vous pouvez la retrouver en jeu ou via <a class="a_nothing" href="https://discord.gg/zenavia">notre Discord <i class="bi bi-discord"></i>.</a></h4>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Time4/OneDrive/Bureau/Dossier de type dossier/DEV PORJETS/TrombinoscopeBaptiste/src/Controller/IndexController.php'|file_link(0) }}">src/Controller/IndexController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Time4/OneDrive/Bureau/Dossier de type dossier/DEV PORJETS/TrombinoscopeBaptiste/templates/index/index.html.twig'|file_link(0) }}">templates/index/index.html.twig</a></code></li>
-    </ul>
-</div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" style="max-width: 60%;" src="{{ asset('images/imageasset.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

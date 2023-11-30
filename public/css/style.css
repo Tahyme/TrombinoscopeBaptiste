@@ -1,0 +1,347 @@
+body {
+    font-family: 'Kanit', sans-serif !important;
+    padding-top: 70px;
+    overflow-x: hidden;
+}
+
+.navbar-container {
+    margin-right: 10px;
+}
+
+.btn-custom {
+    background-color: #6AB8C6 !important;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 25px;
+    margin-right: 40px;
+}
+
+.navbar-wrapper {
+    position: relative;
+    z-index: 9999;
+}
+
+.navbar {
+
+    width: 100%;
+    position: fixed;
+}
+
+.fond1 {
+    background-image: url("../images/Paris.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 250px;
+    box-shadow: inset 0px -3em 2em -15px  #eeeeee;
+}
+
+.fond2 {
+    background-color: rgb(238, 238, 238);
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+
+.fond4 {
+    background-image: url("../images/fond4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 250px;
+    box-shadow: inset 0px 3em 2em -15px  #eeeeee;
+}
+
+.fond3 {
+    background-color: rgb(47, 47, 47);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: rgb(255, 255, 255);
+
+}
+
+.fond5 {
+    background-image: url("../images/fond5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 250px;
+}
+
+
+
+.custom-h3 {
+    color: #6AB8C6;
+}
+
+.custom-h1 {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.custom-h1-2 {
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+    font-size: 64px;
+}
+
+.textblack {
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+    font-size: 24px;
+}
+.zenacolorhighlight {
+    color: rgb(255, 255, 255);
+    background-color: #6AB8C6;
+    padding: 0 5px;
+}
+.zenacolorhighlightadmin {
+    color: rgb(255, 255, 255);
+    background-color: rgb(245, 69, 5);
+    padding: 0 5px;
+}
+.zenacolorhighlightmodo {
+    color: rgb(255, 255, 255);
+    background-color: rgb(111, 85, 237);
+    padding: 0 5px;
+}
+.zenacolorhighlightbuild {
+    color: rgb(255, 255, 255);
+    background-color: rgb(24, 168, 28);
+    padding: 0 5px;
+}
+.zenacolorhighlightguide {
+    color: rgb(255, 255, 255);
+    background-color: #81bbc5;
+    padding: 0 5px;
+}
+.zenacolorhighlightvipplus {
+    color: rgb(255, 255, 255);
+    background-color: #03d9ff;
+    padding: 0 5px;
+}
+.zenacolorhighlightvip {
+    color: rgb(255, 255, 255);
+    background-color: rgb(238, 215, 10);
+    padding: 0 5px;
+}
+.zenacolorhighlightyoutuber {
+    color: rgb(255, 255, 255);
+    background-color: #fdb205;
+    padding: 0 5px;
+}
+.zenacolorhighlightdev {
+    color: rgb(255, 255, 255);
+    background-color: #c305fd;
+    padding: 0 5px;
+}
+.wtext{
+    color: rgb(255, 255, 255);
+}
+
+.space {
+    display: inline-block;
+    width: 20px;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: text;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.custom-button:active {
+    background-color: #e9e9e9;
+    color: #000;
+}
+
+.lienfooter{
+    color: white;
+}
+
+.lienfooter:hover
+{
+    color: #6AB8C6;
+    transition: color 0.3s;
+
+}
+
+.row-odd {
+    background-color: #f5f5f5 !important;
+}
+
+.row-even {
+    background-color: #ffffff !important;
+}
+
+.paratext {
+    font-weight: normal !important;
+    color: rgb(71, 71, 71) !important;
+}
+
+.classementtext {
+    color: #6AB8C6;
+    text-decoration: none;
+}
+
+.a_nothing
+{
+    text-decoration: none;
+    color: inherit;
+}
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(-360deg); }
+}
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(-360deg); }
+}
+@keyframes spin {
+    100% { -webkit-transform: rotate(-360deg); transform: rotate(-360deg); }
+}
+
+.tourne {
+    -webkit-animation: spin 5s linear infinite;
+    -moz-animation: spin 5s linear infinite;
+    animation: spin 5s linear infinite;
+}
+
+.merilac {
+    font-size: 72px !important;
+    background: linear-gradient(to right, #F03C64 0%, #6464D2 100%)!important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    
+}
+
+/* CSS (style.css) */
+/* Personnalisation de la barre de défilement */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Personnalisation de la barre de défilement pour Firefox */
+/* Notez que Mozilla Firefox utilise une approche différente */
+/* Vous pouvez personnaliser davantage si nécessaire */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.has-error input,
+.is-invalid input {
+    border: 1px solid #dc3545;
+}
+
+.has-error .form-check-input,
+.is-invalid .form-check-input {
+    border: 1px solid #dc3545;
+}
+
+.has-error .form-error-message,
+.is-invalid .form-error-message {
+    color: #dc3545;
+}
+
+#token {
+    cursor: pointer;
+    user-select: none;
+    transition: filter 0.3s ease;
+    filter: blur(5px);
+}
+
+.hr-divider {
+    height: 10px;
+    border: none;
+    color: #6AB8C6;
+    background-color: #6AB8C6;
+    margin: 20px 0;
+}
+
+.hr-divider2 {
+    height: 10px;
+    border: none;
+    color: #c66aaf;
+    background-color: #c66aaf;
+    margin: 20px 0;
+}
+
+.hr-divider3 {
+    height: 10px;
+    border: none;
+    color: #b3c66a;
+    background-color: #b3c66a;
+    margin: 20px 0; /* Ajoutez une marge pour espacer le trait horizontal du contenu autour */
+}
+
+.boutiqueborder1
+{
+    border: 10px solid #6AB8C6;
+    border-radius: 15px;
+    padding: 50px;
+    margin-bottom: 10px;
+}
+
+.boutiqueborder2
+{
+    border: 10px solid #72c66a;
+    border-radius: 15px;
+    padding: 50px;
+    margin-bottom: 10px;
+}
+
+.boutiqueborder1,
+.boutiqueborder2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.boutiqueborder1 img,
+.boutiqueborder2 img {
+    filter: grayscale(100%); /* Met l'image en noir et blanc */
+    transition: filter 0.5s, transform 0.5s;
+}
+
+.boutiqueborder1:hover img,
+.boutiqueborder2:hover img {
+    filter: grayscale(0%); /* Retire le noir et blanc au survol */
+    transform: scale(1.1); /* Zoom au survol */
+}
